@@ -1,0 +1,47 @@
+:root{--bg:#0b0f14;--card:#131a22;--line:#1f2a36;--txt:#e8eef5;--mut:#8a98a8;--acc:#36d399;--acc2:#f5a524;--red:#f87272}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif}
+main{max-width:480px;margin:0 auto;padding:calc(env(safe-area-inset-top) + 16px) 18px calc(env(safe-area-inset-bottom) + 24px)}
+header{display:flex;justify-content:space-between;align-items:center}
+h1{font-size:22px;margin:0;letter-spacing:.3px}
+.streak{background:var(--card);border:1px solid var(--line);padding:8px 12px;border-radius:999px;font-size:14px}
+.ring-wrap{position:relative;width:min(82vw,330px);aspect-ratio:1;margin:22px auto 10px}
+.ring{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:12}
+.track{stroke:var(--line)}
+.progress{stroke:var(--acc);stroke-linecap:round;transition:stroke-dashoffset .6s linear,stroke .3s}
+.progress.done{stroke:var(--acc2)}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.status{font-size:14px;color:var(--mut);text-transform:uppercase;letter-spacing:1.5px}
+.big{font-size:clamp(40px,13vw,56px);font-weight:700;font-variant-numeric:tabular-nums;margin:6px 0}
+.sub{font-size:15px;color:var(--mut)}
+.pct{font-size:13px;color:var(--mut);margin-top:4px}
+.info{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:8px 0 18px}
+.info div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}
+.info span{display:block;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.info b{font-size:14px;font-weight:600}
+.presets{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.presets button{min-height:52px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--txt);font-size:16px;font-weight:600}
+.presets button.on{border-color:var(--acc);background:#10261d;color:var(--acc)}
+.presets button:disabled{opacity:.45}
+.custom{margin-top:10px;text-align:center;color:var(--mut)}
+.custom input{width:90px;font-size:18px;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--txt);text-align:center;margin-left:8px}
+.actions{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+button{font:inherit;cursor:pointer}
+.primary,.secondary,.ghost{min-height:58px;border-radius:16px;font-size:18px;font-weight:700;border:0}
+.primary{background:var(--acc);color:#04110b}
+.secondary{background:var(--acc2);color:#1a1000}
+.ghost{background:transparent;border:1px solid var(--line);color:var(--txt);font-weight:600;min-height:50px;font-size:16px}
+.danger{color:var(--red)}
+.history h2{font-size:15px;color:var(--mut);text-transform:uppercase;letter-spacing:1px;margin:28px 0 8px}
+.history ul{list-style:none;margin:0;padding:0}
+.history li{display:flex;justify-content:space-between;padding:12px 4px;border-bottom:1px solid var(--line);font-size:15px}
+.history li .ok{color:var(--acc)}
+.muted{color:var(--mut)}
+footer{font-size:12px;text-align:center;margin-top:20px}
+dialog{background:var(--card);color:var(--txt);border:1px solid var(--line);border-radius:18px;width:min(90vw,360px)}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+dialog h3{margin:0 0 12px}
+dialog input{width:100%;font-size:18px;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--txt)}
+dialog menu{display:flex;gap:10px;padding:0;margin:16px 0 0}
+dialog menu button{flex:1;min-height:48px}

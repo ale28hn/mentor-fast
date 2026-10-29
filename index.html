@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0f14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mentor Fast">
+<title>Mentor Fast</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+  <header>
+    <h1>Mentor Fast</h1>
+    <div class="streak" id="streak" title="Consecutive days with a completed fast of 12h or more">🔥 0 day streak</div>
+  </header>
+
+  <section class="ring-wrap">
+    <svg viewBox="0 0 200 200" class="ring" aria-hidden="true">
+      <circle cx="100" cy="100" r="88" class="track"/>
+      <circle cx="100" cy="100" r="88" class="progress" id="progress"/>
+    </svg>
+    <div class="ring-center">
+      <div class="status" id="status">Not fasting</div>
+      <div class="big" id="big">20:00:00</div>
+      <div class="sub" id="sub">Goal 20h</div>
+      <div class="pct" id="pct"></div>
+    </div>
+  </section>
+
+  <section class="info" id="info">
+    <div><span>Started</span><b id="startedAt">—</b></div>
+    <div><span>Goal at</span><b id="goalAt">—</b></div>
+    <div><span>Eating window</span><b id="eatWin">—</b></div>
+  </section>
+
+  <section class="presets" id="presets" aria-label="Fasting protocol"></section>
+  <div class="custom" id="customRow" hidden>
+    <label>Custom fast hours <input id="customHours" type="number" inputmode="decimal" min="1" max="72" step="0.5" value="20"></label>
+  </div>
+
+  <section class="actions">
+    <button id="startBtn" class="primary">Start fast</button>
+    <button id="endBtn" class="secondary" hidden>End fast</button>
+    <button id="editStartBtn" class="ghost" hidden>Edit start time</button>
+    <button id="resetBtn" class="ghost danger" hidden>Reset (discard)</button>
+  </section>
+
+  <dialog id="editDlg">
+    <form method="dialog">
+      <h3>Fast started at</h3>
+      <input type="datetime-local" id="editInput">
+      <menu><button value="cancel" class="ghost">Cancel</button><button value="ok" id="editOk" class="primary">Save</button></menu>
+    </form>
+  </dialog>
+
+  <section class="history">
+    <h2>Recent fasts</h2>
+    <ul id="historyList"><li class="muted">No fasts logged yet.</li></ul>
+  </section>
+  <footer class="muted" id="foot">Saved on this device. Works offline.</footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
